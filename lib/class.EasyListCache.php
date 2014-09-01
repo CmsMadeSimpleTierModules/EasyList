@@ -22,7 +22,7 @@
 #
 #-------------------------------------------------------------------------
 
-class EasylistCache extends ArrayObject
+class EasyListCache extends ArrayObject
 { 
 	#---------------------
 	# Variables

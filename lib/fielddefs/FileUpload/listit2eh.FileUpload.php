@@ -32,7 +32,7 @@
 #
 #-------------------------------------------------------------------------
 
-class listit2eh_FileUpload extends EasyListEventHandlerBase
+class easylisteh_FileUpload extends EasyListEventHandlerBase
 {
 	#---------------------
 	# Variables
@@ -87,7 +87,7 @@ class listit2eh_FileUpload extends EasyListEventHandlerBase
 			if(isset($this->_data) && $this->_data['error'] === 0) {				
 				
 				// Validate errors
-				if(strpos($this->GetOptionValue('allowed'), listit2fd_FileUpload::_ext($this->_data['name'])) === FALSE) {
+				if(strpos($this->GetOptionValue('allowed'), EasyListfd_FileUpload::_ext($this->_data['name'])) === FALSE) {
 				
 					$errors[] = $this->ModLang('error_bad_extension') . ' (' . $this->GetName() . ')';
 				}

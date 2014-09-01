@@ -68,7 +68,7 @@ class EasyList extends CMSModule
 	{	
 		spl_autoload_register(array(&$this, '_autoloader'));
 	
-		$this->_item_cache 	= new EasylistCache(EasyListItemOperations::$identifiers);
+		$this->_item_cache 	= new EasyListCache(EasyListItemOperations::$identifiers);
 		$this->_config 		= new EasyListConfig($this);
 		$this->prefix 		= $this->GetPreference('url_prefix', munge_string_to_url($this->GetName(), true));
 		
@@ -107,7 +107,7 @@ class EasyList extends CMSModule
 
 	public function GetVersion()
 	{
-		return '1.0-beta1';
+		return '1.1-beta1';
 	}
 
 	public function GetHelp()
@@ -574,7 +574,7 @@ EOT;
 		
 		// Load from database
 		$db = cmsms()->GetDb();
-		$this->_fielddef_cache = new EasylistCache(EasyListFielddefOperations::$identifiers);
+		$this->_fielddef_cache = new EasyListCache(EasyListFielddefOperations::$identifiers);
 
 		$query = "SELECT * FROM " . cms_db_prefix() . "module_" . $this->_GetModuleAlias() . "_fielddef GROUP BY fielddef_id ORDER BY position";	
 		$dbr = $db->Execute($query);

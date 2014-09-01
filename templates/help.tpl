@@ -39,24 +39,9 @@ jQuery(document).ready(function(){ldelim}
     <div id="general_c">
         {$mod->ModLang('help_general')}
     </div>    
-	<div id="duplicating_c">
-		{$mod->ModLang('help_duplicating')}
-	</div>
 	<div id="field_c">
 		{$mod->ModLang('help_fielddefs')}
 	</div>
-    <div id="upgrading_c">
-        {* this is temporary for 1.3 release *}
-        <div class="pagewarning">{$mod->ModLang('upgrade_warning')}</div>
-		<fieldset>
-			<legend>{$mod->ModLang('upgrade_from')} 1.2.x => 1.3.x</legend>
-			{$mod->ModLang('help_upgrading_12xto13')}
-		</fieldset>
-		<fieldset>
-			<legend>{$mod->ModLang('upgrade_from')} 1.3.x => 1.4.x</legend>
-			{$mod->ModLang('help_upgrading_13xto14')}
-		</fieldset>
-    </div>
 	<div id="smarty_plugins_c">
 		<fieldset>
 			<legend>{literal}{EasyListLoader}{/literal}</legend>

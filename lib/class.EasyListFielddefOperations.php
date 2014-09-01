@@ -38,7 +38,7 @@ class EasyListFielddefOperations
 	# Constants
 	#---------------------
 	
-	const FIELDDEF_PREFIX = 'listit2fd';
+	const FIELDDEF_PREFIX = 'EasyListfd';
 
 	#---------------------
 	# Attributes

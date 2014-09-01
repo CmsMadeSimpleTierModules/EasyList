@@ -32,7 +32,7 @@
 #
 #-------------------------------------------------------------------------
 
-class listit2eh_Categories extends EasyListEventHandlerBase
+class easylisteh_Categories extends EasyListEventHandlerBase
 {
 	#---------------------
 	# Magic methods

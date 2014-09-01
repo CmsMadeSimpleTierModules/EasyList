@@ -437,12 +437,12 @@ abstract class EasyListFielddefBase implements ArrayAccess
 		// Check if field has own event handler
 		if(!isset($this->event_handler)) {
 		
-			$fn = $this->GetPath() . DIRECTORY_SEPARATOR . 'listit2eh.' . $this->GetType() . '.php';
+			$fn = $this->GetPath() . DIRECTORY_SEPARATOR . 'easylisteh.' . $this->GetType() . '.php';
 			if(is_readable($fn)) {
 			
 				require_once($fn);
 				
-				$class = 'listit2eh_'.$this->GetType();
+				$class = 'easylisteh_'.$this->GetType();
 				if(class_exists($class))
 					$this->event_handler = new $class($this);
 			}
