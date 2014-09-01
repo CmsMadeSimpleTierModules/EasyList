@@ -107,7 +107,7 @@ class EasyList extends CMSModule
 
 	public function GetVersion()
 	{
-		return '1.1-beta1';
+		return EZVERSION;
 	}
 
 	public function GetHelp()

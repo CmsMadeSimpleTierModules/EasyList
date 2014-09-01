@@ -38,7 +38,7 @@ class EasyListFielddefOperations
 	# Constants
 	#---------------------
 	
-	const FIELDDEF_PREFIX = 'EasyListfd';
+	const FIELDDEF_PREFIX = 'easylistfd';
 
 	#---------------------
 	# Attributes

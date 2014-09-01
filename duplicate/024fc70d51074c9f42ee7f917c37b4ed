@@ -21,6 +21,10 @@
 # Web: www.ich-mach-das.at
 #
 #-------------------------------------------------------------------------
+# ListIt2 become EasyList due to the departure of the wackos in summer 2014.
+#
+# Jean-Christophe ghio <jcg@interphacepro.com>
+#
 #
 # EasyList is a CMS Made Simple module that enables the web developer to create
 # multiple lists throughout a site. It can be duplicated and given friendly
@@ -70,7 +74,7 @@ class 024fc70d51074c9f42ee7f917c37b4ed extends EasyList
 
 	public function GetDependencies()
 	{
-		return array('EasyList' => '0');
+		return array('EasyList' => EZVERSION);
 	}
 	
 	public function VisibleToAdminUser()
