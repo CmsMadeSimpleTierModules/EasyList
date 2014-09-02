@@ -76,7 +76,8 @@ $admin_sections = array(
     lang('extensions') => 'extensions',
     lang('siteadmin') => 'siteadmin',
     lang('myprefs') => 'myprefs',
-    lang('ecommerce') => 'ecommerce'
+    lang('ecommerce') => 'ecommerce',
+    'EZList' => 'files',
 );
 
 // sortorder options
