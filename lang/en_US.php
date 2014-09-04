@@ -395,7 +395,7 @@ $lang['eventhelp_PreRenderAction'] = "<p>".$lang['eventdesc_PreRenderAction']."<
 </ul>";
 
 // module
-$lang['moddescription'] = 'ListItExtended allows you to create lists that you can display throughout your website.';
+$lang['moddescription'] = 'EasyList allows you to create lists that you can display throughout your website.';
 $lang['postinstall'] = '--INSTANCE_NAME-- has successfully been installed';
 $lang['postuninstall'] = '--INSTANCE_NAME-- has successfully been uninstalled';
 
@@ -403,8 +403,6 @@ $lang['postuninstall'] = '--INSTANCE_NAME-- has successfully been uninstalled';
 $lang['general'] = 'General';
 $lang['usage'] = 'Usage';
 $lang['permissions'] = 'Permissions';
-$lang['duplicating'] = 'Creating Instances';
-$lang['upgrading'] = 'Upgrading';
 $lang['smarty_plugins'] = 'Smarty plugins';
 //$lang['about'] = 'About';
 $lang['upgrade_from'] = 'Upgrading from';
@@ -412,7 +410,7 @@ $lang['team'] = 'Team';
 //$lang['contributors'] = 'Contributors';
 
 $lang['help_general'] = '<h3>General Info</h3>      
-    <p>Simply put, ListItExtended allows you to create lists that you can display throughout your website. You could make a simple FAQ or Testimonials feature with this module. The web developer defines fields to constrain what data the client can enter. A number of field types can be specified - text input, checkbox, text area, select date, upload file, select file, dropdown - and additional instructions can be set for each type, for example, input field size, max length, WYSIWYG editor, possible drop down values, possible file extensions, directory paths for file selections, date formats, etc..</p>
+    <p>Simply put, EasyList allows you to create lists that you can display throughout your website. You could make a simple FAQ or Testimonials feature with this module. The web developer defines fields to constrain what data the client can enter. A number of field types can be specified - text input, checkbox, text area, select date, upload file, select file, dropdown - and additional instructions can be set for each type, for example, input field size, max length, WYSIWYG editor, possible drop down values, possible file extensions, directory paths for file selections, date formats, etc..</p>
     <p>An important note of warning - This is not a content construction kit, such as in Drupal. It is meant for small listings, not to store thousands of records. This is because of the database model used (EAV). Also, each bit of data you enter is stored as TEXT data type, regardless of whether it is varchar, boolean, timestamp, etc.</p>';
 	
 $lang['help_usage'] = '<h3>Usage</h3>    
@@ -433,8 +431,8 @@ $lang['help_usage_fielddefs'] = 'Next - set the Field Definitions.
         <li>Each item in each list has three default fields. <br />All Field Definitions set here are additional to them.</li>
     </ol>';
 	
-$lang['help_usage_categories'] = 'Since Version 1.4, Categories were moved to Field definitions. To be able to use Categories with your ListIt2 instance you will have to create a
-	 Field definition with type of "Category".<br /> Once a Field definition was create new Tab with name "Categories" will become available in your ListIt2 module instance.<br />
+$lang['help_usage_categories'] = 'Categories are in Field definitions. To be able to use Categories with your easylisteh instance you will have to create a
+	 Field definition with type of "Category".<br /> Once a Field definition was create new Tab with name "Categories" will become available in your easylist module instance.<br />
 	 Now you can start adding categories.';
 
 $lang['help_usage_items'] = 'Now we move on to the item list itself. In this example it says "Add Box", this was renamed in the "Options" tab. 
@@ -479,43 +477,10 @@ $lang['help_fielddefs'] = '<h3>Field Definitions</h3>
     </ul>
     
     <h3>Custom Field Definitions</h3>
-    <p>Since Version 1.3 field definitions have been completely rewritten.<br />
-    As a result you can now create your custom field definitions by following naming convention in ListItExtended module.</p>
-    <p>Following these changes, ListItExtended Team has also released a module named <a href="http://dev.cmsmadesimple.org/projects/listit2xdefs" target="_blank">ListIt2XDefs</a> that is simply a wrapper module for Custom Field definitions.<br />
-    When creating your custom filed for example "MyField" (where MyField would be name of your custom field) you would create "MyField" folder inside "ListIt2XDefs/fielddefs" folder and add needed files in this particular folder.<br />
-    Fielddef file has to be prefixed with "EasyListfd" for example "EasyListfd.MyField.php", for input field template which is used when managing Item you would need "input.MyField.tpl" and as field definition settings template you would need admin.MyField.tpl (only needed if additional settings are possible for this field).</p>
-    <p>After you are done writing your own custom field definition, you will have to go to "Modules &raquo; ListIt2" click on "Field Definitions" tab and scan for new field definitions by clicking on "Scan Field Definitions" button.<br />
-    <strong>If you are looking for Field Definitions like GBFilePicker Upload, Gallery Options, FEU Dropdown, Color Picker install <a href="http://dev.cmsmadesimple.org/projects/listit2xdefs" target="_blank">ListIt2XDefs</a> module first.</strong></p><br />
-    
-    <h4><strong>Watch this video for detailed instructions</strong></h4>';
-	
-$lang['help_upgrading_12xto13'] = <<<EOT
-    <h4>Step one</h4>
-    <p class="red"><strong>Please read upgrade Information above!<br />
-    Make sure you create Backup or your Website and Database before any further actions</strong></p>
-    <p>As mentioned after upgrade from 1.2.x to 1.3 the first step you will have to make is installing newly created <strong>{ListIt2Original}</strong> Instance.<br />
-    Once this Instance is installed your old Original ListIt2 Items will be available in ListIt2Original Instance which you will find in "Content" backend section.</p>
-    <p>At this moment your Frontend will most possibly be broken, displaying a Error about not recognized Smarty Tag for example "unknown tag ListIt2", you should replace any of {ListIt2} tags you are using in your Pages or Templates to {ListIt2Original}.</p>
-    <h4>Step two</h4>
-    <p>Due to limitation in module upgrade process, it is not possible to detect any of your previous ListIt2 Module settings, which means that you should make sure to change these settings in "Content &raquo; ListIt2Original" again to your preference.<br />
-    Also you will have to set any Template in "Templates" tab that you have been using before as Defaul template back to "default" if you are not using "sumarytemplate" or "detailtemplate" or any Template related parameters.</p>
-    <h4>Step three</h4>
-    <p>In case you have been using Field definitions like GBFilePicker Upload File or Gallery selection, please note that these are no longer part of ListItExtended Module.<br />
-    Reason for this is simply that Field definitions have been completely rewriten making it possible for you to create your own custom Field definitions and simply ListItExtended DEV Team can not support any third party Modules as part of ListItExtended Module and therefor possibly delaying releases in future due to Module incompatibility or anything else.</p>
-    <p>To make your old Upload File or Gallery Fields working again you will have to install <a href="http://dev.cmsmadesimple.org/projects/listit2xdefs" target="_blank">ListItExtended XDefs</a> Module which is a Gateway module to ListItExtended custom Field definitions.<br />
-    After ListItExtended XDefs is installed you will find a list of available Field Definitions in "Extensions &raquo; ListIt2" by clicking on "Field Definitions" tab.<br />
-    Ideally your Field definitions should work again, if that is not the case you should try to repair Field definitions database table by clicking on "Repair" button under "Maintenance" tab.</p><br />
-    <p><strong>If you have followed above steps, you should now have a fully functional and upgraded ListItExtended Module and all created Instances.</strong></p>
-EOT;
-
-$lang['help_upgrading_13xto14'] = <<<EOT
-	<h4>Categories changes</h4>
-	<p>In version 1.4 behavior of Categories was changed and moved to Field definitions. Reason for this is, that not every ListIt2 Module instance actually requires Categories,
-	therefore when you see your Categories missing you will have to create new Field definition of type "Category", if you do not see this Field definition, try scaning for new Field
-	definition in ListIt2 Module interface, located in "Field Definitions" tab.</p>
-	<p>Once your Category Filed definition was created, you should see "Categories" tab in your ListIt2 Module instance again, as well as have the ability of choosing a Category for a Item.</p>
-EOT;
-	
+    <p>You can now create your custom field definitions by following naming convention in EasyList module.</p>
+    <p>When creating your custom filed for example "MyField" (where MyField would be name of your custom field) you would create "MyField" folder inside "modules/EasyList/custom_fielddefs" folder and add needed files in this particular folder.<br />
+    Fielddef file has to be prefixed with "EasyListfd" for example "EasyListfd.MyField.php", for input field template which is used when managing Item you would need "input.MyField.tpl" and as field definition settings template you would need admin.MyField.tpl (only needed if additional settings are possible for this field).</p>';
+    	
 $lang['help_categories'] = <<<EOT
 	<h3>Categories</h3>
     <p>Categories are part of Field definitions and disabled by default.<br />
@@ -534,27 +499,19 @@ $lang['help_templates'] = '<h3>Templates</h3>
     <p>{--INSTANCE_NAME-- debug=1}</p>
     <p>You can access any field directly when looping through items using its alias, for example, to if you created a field definition with an alias "position", you can do one of the following:</p>';
 
-$lang['help_duplicating'] = '<h3>Creating Module Instances</h3>
-    <p>This module is a Control Panel for creating ListItExtended Module Instances. To create ListItExtended module Instance, simply go to "Instances" tab and click on "Create Instance" button.<br />
-    Make sure you follow the CMSMS module naming conventions, a-z with no punctuation characters or spaces to be safe :)<br />
-    After the module has been created a new instance will be installed and listed in original ListItExtended module under "Instances" tab.</p><br />
-    <p>You can always change the module friendly name once installed under "Options" (Content &raquo; ListIt2NameOfDuplicate).<br />
-    To change the icon, replace /modules/ListIt2NameOfDuplicate/images/icon.gif.<br />
-    To change Admin section of the module, simply select appropriate section from Dropdown. Make sure you clear the cache after these changes.</p>';
-	
 
 $lang['help_smarty_plugins'] = <<<EOT
 	<h4>What does this do?</h4>
-	 <p>This plugin allows you to load ListItExtended item and category object by certain criteria, anywhere in the system.</p>
+	 <p>This plugin allows you to load EasyList item and category object by certain criteria, anywhere in the system.</p>
 	 
 	<h4>How do I use it?</h4>
 	<p>Simply insert this tag into your page or template:</p>
-	<pre><code>{EasyListLoader item='item' identifier='alias' instance='ListIt2Instance' value='myalias' assign='tmp'}</code></pre>
+	<pre><code>{EasyListLoader item='item' identifier='alias' instance='EasyListInstance' value='myalias' assign='tmp'}</code></pre>
 	
 	<p>&nbsp;</p>
 	
-	<p>Following line will load item object from instance 'ListIt2Instance' by alias 'myalias' and assign it to variable &dollar;tmp. <br /> 
-	After this you can use it in similar way, just like in regular ListItExtended templates:</p>
+	<p>Following line will load item object from instance 'EasyListInstance' by alias 'myalias' and assign it to variable &dollar;tmp. <br /> 
+	After this you can use it in similar way, just like in regular EasyList templates:</p>
 	<pre><code>{&dollar;tmp->title}</code></pre>
 	
 	<p>&nbsp;</p>
@@ -615,12 +572,5 @@ $lang['help_param_include_items'] = 'Specify an id/alias or comma separated ids/
 $lang['help_param_exclude_items'] = 'Specify an id/alias or comma separated ids/aliases of the items you want to exclude from list.';
 $lang['help_param_year'] = 'Filter items by year.';
 $lang['help_param_month'] = 'Filter items by month.';
-
-// this is temporary for 1.3 upgrade
-$lang['upgrade_warning'] = '<h3>Important upgrade Information</h3>
-    <p><strong>If you have upgraded to 1.3 from ListItExtended 1.2.2 or earlier, read this carefully!</strong></p>
-    <p>After completing the upgrade proceedure of ListItExtended 1.3, your previous "ListIt2" module will be converted to a new module instance called ListIt2Original.<br />
-    Please go to "Extensions &raquo; Modules" and install this newly created instance. Once installed, items from your original ListIt2 module will be available again.<br />
-    Unfortunately you will have to change all {ListIt2} tags in your website to {ListIt2Original}. Sorry about that.</p>';
 
 ?>

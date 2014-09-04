@@ -293,16 +293,15 @@ $lang['postuninstall'] = ' has successfully been uninstalled';
 $lang['general'] = 'General';
 $lang['usage'] = 'Usage';
 $lang['permissions'] = 'Permissions';
-$lang['duplicating'] = 'Duplicating this module';
 $lang['upgrading'] = 'Upgrading';
 $lang['smarty_plugins'] = 'Smarty plugins';
 $lang['about'] = 'About';
 $lang['upgrade_from'] = 'Upgrading from';
 $lang['team'] = 'Team';
 $lang['contributors'] = 'Contributors';
-$lang['help_general'] = '<h3>General Info</h3>		
-	<p>Simply put, ListIt allows you to create lists that you can display throughout your website. You could make a simple FAQ or Testimonials feature with this module. The web developer defines fields to constrain what data the client can enter. A number of field types can be specified - text input, checkbox, text area, select date, upload file, select file, dropdown - and additional instructions can be set for each type, for example, input field size, max length, WYSIWYG editor, possible drop down values, possible file extensions, directory paths for file selections, date formats, etc..</p>
-	<p>An important note of warning - This is not a content construction kit, such as in Drupal. It is meant for small listings, not to store thousands of records. This is because of the database model used (EAV). Also, each bit of data you enter is stored as TEXT data type, regardless of whether it is varchar, boolean, timestamp, etc. This is a restriction of a short development time frame.</p>';
+$lang['help_general'] = '<h3>Info General</h3>		
+	<p>Simplement dit, EasyList vous permet de créer des listes que vous pouvez afficher sur l\'ensemble de votre site. Vous pourriez fair une FAQ, You could make a simple FAQ ou gérer des témoignages avec ce module. The web developer defines fields to constrain what data the client can enter. A number of field types can be specified - text input, checkbox, text area, select date, upload file, select file, dropdown - and additional instructions can be set for each type, for example, input field size, max length, WYSIWYG editor, possible drop down values, possible file extensions, directory paths for file selections, date formats, etc..</p>
+	<p>An important note of warning - This is not a content construction kit. It is meant for small listings, not to store thousands of records. This is because of the database model used (EAV). Also, each bit of data you enter is stored as TEXT data type, regardless of whether it is varchar, boolean, timestamp, etc. This is a restriction of a short development time frame.</p>';
 $lang['help_usage'] = '<h3>Usage</h3>			
 	<p>You can configure {$module_name} here: Content > {$module_name}</p>
 	<p>Place this tag in your page: {{$module_name}}</p>';
@@ -333,120 +332,35 @@ $lang['help_permissions'] = '<h3>Permissions</h3>
 	</ul>
 	<p>To allow non-admin users to upload files, please go to Extensions > GBFilePicker and tick that first checkbox &quot;Show filemanagement options&quot;.</p>';
 $lang['help_fielddefs'] = '<h3>Field Definitions</h3>
-	<p>The first thing you should configure are your field definitions. <strong>Note:</strong> Field definitions can only be deleted when they&#039;re not in use in order to avoid data loss.</p>
-	<p>For each field definition, you can specify additional instructions in the &quot;extra&quot; field.</p>
-	<ul>
-		<li>
-			<p>Instruction: 
-			<code>size[20]</code><br />
-			Possible value: integer<br />
-			Applicable to: Text Input, Select Date</p>    
-		</li>
-		<li>
-			<p>Instruction: 
-			<code>max_length[20]
-			</code><br />
-			Possible value: integer<br />
-			Applicable to: Text Input, Text Area, Select Date</p>
-		</li>
-		<li>
-			<p>Instruction: 
-			<code>wysiwyg[1]
-			</code><br />
-			Possible value: 1|0|true|false<br />
-			Applicable to: Text Area</p>
-		</li>
-		<li>
-			<p>Instruction: 
-			<code>options[apple=Apple,banana=Banana]
-			</code><br />
-			Possible value: key=value,...<br />
-			Applicable to: Dropdown</p>
-		</li>
-      <li>
-      <p>Instruction: 
-        <code>allow[pdf,gif,png,jpeg,jpg]
-        </code><br />
-        Possible value: extension,... (keep lowercase)<br />
-        Applicable to: Upload File, Select File
-      </p>    
-      </li>    
-      <li>        
-      <p>Instruction: 
-        <code>dir[/path/to/dir]
-        </code><br />
-        Possible value: Directory path that will be appended to 
-        <code>$config[&#039;uploads_url&#039;]
-        </code>. No slash at the end. <code>{$item_id} and {$item_alias}</code> will be replaced.<br />
-        Applicable to: Upload File, Select File
-      </p>    
-      </li>    
-      <li>        
-      <p>Instruction: 
-        <code>exclude_prefix[thumb_,foo_]
-        </code><br />
-        Possible value: prefix,...<br />
-        Applicable to: Upload File, Select File
-      </p>    
-      </li>    
-      <li>        
-      <p>Instruction: 
-        <code>dateformat[dd/mm/yy]
-        </code><br />
-        Possible value: Date format used by the jQuery datepicker. Try googling &#039;jquery formatDate&#039;<br />
-        Applicable to: Select Date
-      </p>    
-      </li>
-	  <li>        
-      <p>Instruction: 
-        <code>filebrowser[1]
-        </code><br />
-        Possible value: 1|0|true|false<br />
-        Applicable to: Upload File<br />
-		<b>Note:</b> Sets GBFilePicker to filebrowser mode instead of default dropdown mode
-      </p>    
-      </li>
-    </ul>
-    <p>You can specify multiple instructions separated by a semicolon (
-      <code>;
-      </code>), for example:
-    </p>
-    <p>
-      <code>allow[pdf];dir[/docs/pdf]</code>
-    </p>
+    <p>The first thing you should configure are your field definitions.</p>
+    <p>For each field definition, you can specify additional settings by choosing from available options.</p>
     
-	<h3>Field Definitions by type</h3>
-        
+    <h3>Default Field Definitions by type</h3>
     <ul>
-        <li>Text Input: <code>size[20];max_length[20]</code></li>
-        <li>Checkbox: <code>-</code></li>
-        <li>Text Area: <code>max_length[20];wysiwyg[1]</code></li>
-        <li>Select Date: <code>size[20];max_length[20];dateformat[dd/mm/yy]</code></li>
-        <li>Upload File: <code>allow[pdf,gif,jpeg,jpg];dir[/path/to/dir];exclude_prefix[thumb_,foo_]</code></li>
-        <li>Select File: <code>allow[pdf,gif,jpeg,jpg];dir[/path/to/dir];exclude_prefix[thumb_,foo_];filebrowser[1]</code></li>
-        <li>Dropdown: <code>options[apple=Apple,banana=Banana]</code></li>
-    </ul>';
-$lang['help_upgrading_12xto13'] = '    <h4>Step one</h4>
-    <p class=&quot;red&quot;><strong>Please read upgrade Information above!<br />
-    Make sure you create Backup or your Website and Database before any further actions</strong></p>
-    <p>As mentioned after upgrade from 1.2.x to 1.3 the first step you will have to make is installing newly created <strong>{ListIt2Original}</strong> Instance.<br />
-    Once this Instance is installed your old Original ListIt2 Items will be available in ListIt2Original Instance which you will find in &quot;Content&quot; backend section.</p>
-    <p>At this moment your Frontend will most possibly be broken, displaying a Error about not recognized Smarty Tag for example &quot;unknown tag ListIt2&quot;, you should replace any of {ListIt2} tags you are using in your Pages or Templates to {ListIt2Original}.</p>
-    <h4>Step two</h4>
-    <p>Due to limitation in module upgrade process, it is not possible to detect any of your previous ListIt2 Module settings, which means that you should make sure to change these settings in &quot;Content &raquo; ListIt2Original&quot; again to your preference.<br />
-    Also you will have to set any Template in &quot;Templates&quot; tab that you have been using before as Defaul template back to &quot;default&quot; if you are not using &quot;sumarytemplate&quot; or &quot;detailtemplate&quot; or any Template related parameters.</p>
-    <h4>Step three</h4>
-    <p>In case you have been using Field definitions like GBFilePicker Upload File or Gallery selection, please note that these are no longer part of ListItExtended Module.<br />
-    Reason for this is simply that Field definitions have been completely rewriten making it possible for you to create your own custom Field definitions and simply ListItExtended DEV Team can not support any third party Modules as part of ListItExtended Module and therefor possibly delaying releases in future due to Module incompatibility or anything else.</p>
-    <p>To make your old Upload File or Gallery Fields working again you will have to install <a href="http://dev.cmsmadesimple.org/projects/listit2xdefs" target="_blank">ListItExtended XDefs</a> Module which is a Gateway module to ListItExtended custom Field definitions.<br />
-    After ListItExtended XDefs is installed you will find a list of available Field Definitions in &quot;Extensions &raquo; ListIt2&quot; by clicking on &quot;Field Definitions&quot; tab.<br />
-    Ideally your Field definitions should work again, if that is not the case you should try to repair Field definitions database table by clicking on &quot;Repair&quot; button under &quot;Maintenance&quot; tab.</p><br />
-    <p><strong>If you have followed above steps, you should now have a fully functional and upgraded ListItExtended Module and all created Instances.</strong></p>';
-$lang['help_upgrading_13xto14'] = '	<h4>Categories changes</h4>
-	<p>In version 1.4 behavior of Categories was changed and moved to Field definitions. Reason for this is, that not every ListIt2 Module instance actually requires Categories,
-	therefore when you see your Categories missing you will have to create new Field definition of type &quot;Category&quot;, if you do not see this Field definition, try scaning for new Field
-	definition in ListIt2 Module interface, located in &quot;Field Definitions&quot; tab.</p>
-	<p>Once your Category Filed definition was created, you should see &quot;Categories&quot; tab in your ListIt2 Module instance again, as well as have the ability of choosing a Category for a Item.</p>';
+        <li>Text Input</li>
+        <li>Checkbox</li>
+        <li>Checkbox Group</li>
+        <li>Radio Group</li>
+        <li>Text Area</li>
+        <li>Select File</li>
+        <li>File Upload</li>
+        <li>Dropdown</li>
+        <li>Content Pages</li>
+        <li>Select DateTime</li>
+        <li>Multi Select</li>
+        <li>Checkbox Group</li>
+        <li>Slider</li>
+        <li>Categories</li>
+    </ul>
+    
+    <h3>Custom Field Definitions</h3>
+    <p>You can now create your custom field definitions by following naming convention in EasyList module.</p>
+    <p>When creating your custom filed for example "MyField" (where MyField would be name of your custom field) you would create "MyField" folder inside "modules/EasyList/custom_fielddefs" folder and add needed files in this particular folder.<br />
+    Fielddef file has to be prefixed with "EasyListfd" for example "EasyListfd.MyField.php", for input field template which is used when managing Item you would need "input.MyField.tpl" and as field definition settings template you would need admin.MyField.tpl (only needed if additional settings are possible for this field).</p>
+    <p>After you are done writing your own custom field definition, you will have to go to "Modules &raquo; EasyList" click on "Field Definitions" tab and scan for new field definitions by clicking on "Scan Field Definitions" button.<br />
+    <strong>If you are looking for Field Definitions like GBFilePicker Upload, Gallery Options, FEU Dropdown, Color Picker install <a href="http://dev.cmsmadesimple.org/projects/listit2xdefs" target="_blank">ListIt2XDefs</a> module first.</strong></p><br />
+    
+    <h4><strong>Watch this video for detailed instructions</strong></h4>';
 $lang['help_categories'] = '<h3>Categories</h3>
 	<p>Multi level categories are supported.</p>';
 $lang['help_templates'] = '<h3>Templates</h3>

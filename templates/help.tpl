@@ -18,21 +18,12 @@ jQuery(document).ready(function(){ldelim}
     <div id="general">
         {$mod->ModLang('general')}
     </div>    
-	<div id="duplicating">
-		{$mod->ModLang('duplicating')}
-	</div>
 	<div id="field">
 		{$mod->ModLang('fielddefs')}
 	</div>	
-    <div id="upgrading">
-        {$mod->ModLang('upgrading')}
-    </div> 
     <div id="smarty_plugins">
         {$mod->ModLang('smarty_plugins')}
     </div>   	
-	<div id="about">
-		About
-	</div>
 </div>
 <div class="clearb"></div>
 <div id="page_content">
