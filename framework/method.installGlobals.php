@@ -127,14 +127,14 @@ $dict->ExecuteSQLArray($sqlarray);
 // **************************************************************** templates types ***********************************************
 # -------------------------- Summary Type -----------------------
 try {
-  $ListIt2_summary_template_type = new CmsLayoutTemplateType();
-  $ListIt2_summary_template_type->set_originator($this->GetName());
-  $ListIt2_summary_template_type->set_name('summary');
-  $ListIt2_summary_template_type->set_dflt_flag(TRUE);
-  $ListIt2_summary_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
-  $ListIt2_summary_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
-  $ListIt2_summary_template_type->reset_content_to_factory();
-  $ListIt2_summary_template_type->save();
+  $EasyList_summary_template_type = new CmsLayoutTemplateType();
+  $EasyList_summary_template_type->set_originator($this->GetName());
+  $EasyList_summary_template_type->set_name('summary');
+  $EasyList_summary_template_type->set_dflt_flag(TRUE);
+  $EasyList_summary_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  $EasyList_summary_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
+  $EasyList_summary_template_type->reset_content_to_factory();
+  $EasyList_summary_template_type->save();
 }
 catch( CmsException $e ) {
   // log it
@@ -143,14 +143,14 @@ catch( CmsException $e ) {
 }
 # -------------------------- Detail Type -----------------------
 try {
-  $ListIt2_detail_template_type = new CmsLayoutTemplateType();
-  $ListIt2_detail_template_type->set_originator($this->GetName());
-  $ListIt2_detail_template_type->set_name('detail');
-  $ListIt2_detail_template_type->set_dflt_flag(TRUE);
-  $ListIt2_detail_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
-  $ListIt2_detail_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
-  $ListIt2_detail_template_type->reset_content_to_factory();
-  $ListIt2_detail_template_type->save();
+  $EasyList_detail_template_type = new CmsLayoutTemplateType();
+  $EasyList_detail_template_type->set_originator($this->GetName());
+  $EasyList_detail_template_type->set_name('detail');
+  $EasyList_detail_template_type->set_dflt_flag(TRUE);
+  $EasyList_detail_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  $EasyList_detail_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
+  $EasyList_detail_template_type->reset_content_to_factory();
+  $EasyList_detail_template_type->save();
 }
 catch( CmsException $e ) {
   // log it
@@ -159,14 +159,14 @@ catch( CmsException $e ) {
 }
 # -------------------------- Search Type -----------------------
 try {
-  $ListIt2_search_template_type = new CmsLayoutTemplateType();
-  $ListIt2_search_template_type->set_originator($this->GetName());
-  $ListIt2_search_template_type->set_name('search');
-  $ListIt2_search_template_type->set_dflt_flag(TRUE);
-  $ListIt2_search_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
-  $ListIt2_search_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
-  $ListIt2_search_template_type->reset_content_to_factory();
-  $ListIt2_search_template_type->save();
+  $EasyList_search_template_type = new CmsLayoutTemplateType();
+  $EasyList_search_template_type->set_originator($this->GetName());
+  $EasyList_search_template_type->set_name('search');
+  $EasyList_search_template_type->set_dflt_flag(TRUE);
+  $EasyList_search_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  $EasyList_search_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
+  $EasyList_search_template_type->reset_content_to_factory();
+  $EasyList_search_template_type->save();
 }
 catch( CmsException $e ) {
   // log it
@@ -175,14 +175,14 @@ catch( CmsException $e ) {
 }
 # -------------------------- Category Type -----------------------
 try {
-  $ListIt2_category_template_type = new CmsLayoutTemplateType();
-  $ListIt2_category_template_type->set_originator($this->GetName());
-  $ListIt2_category_template_type->set_name('category');
-  $ListIt2_category_template_type->set_dflt_flag(TRUE);
-  $ListIt2_category_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
-  $ListIt2_category_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
-  $ListIt2_category_template_type->reset_content_to_factory();
-  $ListIt2_category_template_type->save();
+  $EasyList_category_template_type = new CmsLayoutTemplateType();
+  $EasyList_category_template_type->set_originator($this->GetName());
+  $EasyList_category_template_type->set_name('category');
+  $EasyList_category_template_type->set_dflt_flag(TRUE);
+  $EasyList_category_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  $EasyList_category_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
+  $EasyList_category_template_type->reset_content_to_factory();
+  $EasyList_category_template_type->save();
 }
 catch( CmsException $e ) {
   // log it
@@ -191,14 +191,14 @@ catch( CmsException $e ) {
 }
 # -------------------------- Archive Type -----------------------
 try {
-  $ListIt2_archive_template_type = new CmsLayoutTemplateType();
-  $ListIt2_archive_template_type->set_originator($this->GetName());
-  $ListIt2_archive_template_type->set_name('archive');
-  $ListIt2_archive_template_type->set_dflt_flag(TRUE);
-  $ListIt2_archive_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
-  $ListIt2_archive_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
-  $ListIt2_archive_template_type->reset_content_to_factory();
-  $ListIt2_archive_template_type->save();
+  $EasyList_archive_template_type = new CmsLayoutTemplateType();
+  $EasyList_archive_template_type->set_originator($this->GetName());
+  $EasyList_archive_template_type->set_name('archive');
+  $EasyList_archive_template_type->set_dflt_flag(TRUE);
+  $EasyList_archive_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  $EasyList_archive_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
+  $EasyList_archive_template_type->reset_content_to_factory();
+  $EasyList_archive_template_type->save();
 }
 catch( CmsException $e ) {
   // log it
@@ -214,10 +214,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_summary_default.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('summary_default');
+    $tpl->set_name($this->GetName().'_summary_default');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_summary_template_type);
+    $tpl->set_type($EasyList_summary_template_type);
     $tpl->set_type_dflt(TRUE);
     $tpl->save();
   }
@@ -233,10 +233,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_summary_searchresults.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('summary_searchresults');
+    $tpl->set_name($this->GetName().'_summary_searchresults');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_summary_template_type);
+    $tpl->set_type($EasyList_summary_template_type);
     $tpl->save();
   }
 }
@@ -251,10 +251,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_detail_default.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('detail_default');
+    $tpl->set_name($this->GetName().'_detail_default');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_detail_template_type);
+    $tpl->set_type($EasyList_detail_template_type);
     $tpl->set_type_dflt(TRUE);
     $tpl->save();
   }
@@ -270,10 +270,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_search_default.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('search_default');
+    $tpl->set_name($this->GetName().'_search_default');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_search_template_type);
+    $tpl->set_type($EasyList_search_template_type);
     $tpl->set_type_dflt(TRUE);
     $tpl->save();
   }
@@ -288,10 +288,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_search_filter.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('search_filter');
+    $tpl->set_name($this->GetName().'_search_filter');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_search_template_type);
+    $tpl->set_type($EasyList_search_template_type);
     $tpl->save();
   }
 }
@@ -305,10 +305,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_search_multiselect.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('search_multiselect');
+    $tpl->set_name($this->GetName().'_search_multiselect');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_search_template_type);
+    $tpl->set_type($EasyList_search_template_type);
     $tpl->save();
   }
 }
@@ -324,10 +324,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_category_default.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('category_default');
+    $tpl->set_name($this->GetName().'_category_default');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_category_template_type);
+    $tpl->set_type($EasyList_category_template_type);
     $tpl->set_type_dflt(TRUE);
     $tpl->save();
   }
@@ -343,10 +343,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_category_hierarchy.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('category_hierarchy');
+    $tpl->set_name($this->GetName().'_category_hierarchy');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_category_template_type);
+    $tpl->set_type($EasyList_category_template_type);
     $tpl->save();
   }
 }
@@ -361,10 +361,10 @@ $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_archive_default.tpl');
   if( file_exists( $fn ) ) {
     $template = @file_get_contents($fn);
     $tpl = new CmsLayoutTemplate();
-    $tpl->set_name('archive_default');
+    $tpl->set_name($this->GetName().'_archive_default');
     $tpl->set_owner($uid);
     $tpl->set_content($template);
-    $tpl->set_type($ListIt2_archive_template_type);
+    $tpl->set_type($EasyList_archive_template_type);
     $tpl->set_type_dflt(TRUE);
     $tpl->save();
   }
@@ -386,7 +386,6 @@ $this->SetPreference('friendlyname', $this->GetName());
 $this->SetPreference('item_singular', utf8_encode(html_entity_decode($this->ModLang('item'))));
 $this->SetPreference('item_plural', utf8_encode(html_entity_decode($this->ModLang('items'))));
 $this->SetPreference('item_title', utf8_encode(html_entity_decode($this->ModLang('item_title'))));
-//$this->SetPreference($this->_GetModuleAlias() . '_default_category', '1');
 
 #---------------------
 # Permissions
