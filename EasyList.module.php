@@ -43,7 +43,7 @@ define('EASYLIST_VALUE_SEPARATOR', ',');
 define('EASYLIST_CONFIG_FILE', 'listit2_config.php');
 define('EASYLIST_FRAMEWORK_PATH', cms_join_path($config['root_path'],'modules',EASYLIST,'framework'));
 define('EASYLIST_TEMPLATE_PATH', cms_join_path(EASYLIST_FRAMEWORK_PATH,'templates'));
-
+define ('EZVERSION', '1.2-beta1');
 /*****************************************************************
  MAIN CLASS
 *****************************************************************/
@@ -71,7 +71,6 @@ class EasyList extends CMSModule
 		$this->_item_cache 	= new EasyListCache(EasyListItemOperations::$identifiers);
 		$this->_config 		= new EasyListConfig($this);
 		$this->prefix 		= $this->GetPreference('url_prefix', munge_string_to_url($this->GetName(), true));
-		
 		parent::__construct();	
 	}
 	
