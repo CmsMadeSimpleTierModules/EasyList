@@ -43,7 +43,7 @@ class EasyListfd_TextArea extends EasyListFielddefBase
 	
 	public function Validate(&$errors)
 	{
-		if (strlen($this->GetValue("string")) > $this->GetOptionValue('max_lenght', 6000) && $this->GetOptionValue('max_lenght')) {
+		if (strlen($this->GetValue("string")) > $this->GetOptionValue('max_length', 6000) && $this->GetOptionValue('max_length')) {
 		
 			$errors[] = $this->ModLang('too_long') . ' (' . $this->GetName() . ')';
 		}		
