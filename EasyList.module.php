@@ -43,7 +43,7 @@ define('EASYLIST_VALUE_SEPARATOR', ',');
 define('EASYLIST_CONFIG_FILE', 'listit2_config.php');
 define('EASYLIST_FRAMEWORK_PATH', cms_join_path($config['root_path'],'modules',EASYLIST,'framework'));
 define('EASYLIST_TEMPLATE_PATH', cms_join_path(EASYLIST_FRAMEWORK_PATH,'templates'));
-define ('EZVERSION', '1.2-beta1');
+define ('EZVERSION', '1.3-beta1');
 /*****************************************************************
  MAIN CLASS
 *****************************************************************/
@@ -244,7 +244,7 @@ EOT;
 			echo $contents;			
 		}		
 	}
-	
+/*	
 	function Upgrade($oldversion, $newversion)
 	{
 		$config = cmsms()->GetConfig();
@@ -263,7 +263,7 @@ EOT;
 
 		return $response;
 	}
-
+*/
 	function Install()
 	{
 		$config = cmsms()->GetConfig();
@@ -394,9 +394,9 @@ EOT;
   }
   public static function template_type_lang_callback($str)
   {
-      $mod = cms_utils::get_module(LISTIT);
+      $mod = cms_utils::get_module(EASYLIST);
     if( is_object($mod) ) return $mod->Lang('type_'.$str);
-  }
+	  }
 	
 	
 	#---------------------
