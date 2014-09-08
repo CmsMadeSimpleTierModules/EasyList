@@ -131,7 +131,7 @@ try {
   $EasyList_summary_template_type->set_originator($this->GetName());
   $EasyList_summary_template_type->set_name('summary');
   $EasyList_summary_template_type->set_dflt_flag(TRUE);
-  $EasyList_summary_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  //$EasyList_summary_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
   $EasyList_summary_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
   $EasyList_summary_template_type->reset_content_to_factory();
   $EasyList_summary_template_type->save();
@@ -147,7 +147,7 @@ try {
   $EasyList_detail_template_type->set_originator($this->GetName());
   $EasyList_detail_template_type->set_name('detail');
   $EasyList_detail_template_type->set_dflt_flag(TRUE);
-  $EasyList_detail_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  //$EasyList_detail_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
   $EasyList_detail_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
   $EasyList_detail_template_type->reset_content_to_factory();
   $EasyList_detail_template_type->save();
@@ -163,7 +163,7 @@ try {
   $EasyList_search_template_type->set_originator($this->GetName());
   $EasyList_search_template_type->set_name('search');
   $EasyList_search_template_type->set_dflt_flag(TRUE);
-  $EasyList_search_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  //$EasyList_search_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
   $EasyList_search_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
   $EasyList_search_template_type->reset_content_to_factory();
   $EasyList_search_template_type->save();
@@ -179,7 +179,7 @@ try {
   $EasyList_category_template_type->set_originator($this->GetName());
   $EasyList_category_template_type->set_name('category');
   $EasyList_category_template_type->set_dflt_flag(TRUE);
-  $EasyList_category_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  //$EasyList_category_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
   $EasyList_category_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
   $EasyList_category_template_type->reset_content_to_factory();
   $EasyList_category_template_type->save();
@@ -195,7 +195,7 @@ try {
   $EasyList_archive_template_type->set_originator($this->GetName());
   $EasyList_archive_template_type->set_name('archive');
   $EasyList_archive_template_type->set_dflt_flag(TRUE);
-  $EasyList_archive_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
+  //$EasyList_archive_template_type->set_lang_callback(EASYLIST.'::template_type_lang_callback');
   $EasyList_archive_template_type->set_content_callback(EASYLIST.'::reset_templates_defaults');
   $EasyList_archive_template_type->reset_content_to_factory();
   $EasyList_archive_template_type->save();
@@ -208,7 +208,7 @@ catch( CmsException $e ) {
 
 // **************************************************************** templates ***********************************************
 # -------------------------- Summaries templates -----------------------
-
+$uid = get_userid();
 try {
 $fn = cms_join_path(EASYLIST_TEMPLATE_PATH, 'fe_summary_default.tpl');
   if( file_exists( $fn ) ) {
