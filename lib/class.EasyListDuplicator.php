@@ -28,7 +28,7 @@ class EasyListDuplicator {
 	# Constants
 	#---------------------
 	
-	const MOD_PREFIX = 'Easylist';
+	const MOD_PREFIX = 'EasyList';
 	const PLACEHOLDER = '024fc70d51074c9f42ee7f917c37b4ed';
 
 	#---------------------
