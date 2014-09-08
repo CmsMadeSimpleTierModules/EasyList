@@ -370,9 +370,10 @@ EOT;
 			echo $contents;			
 		}
 	}
-	
+
 	function Upgrade($oldversion, $newversion)
 	{
+	/*
 		$config = cmsms()->GetConfig();
 		$smarty = cmsms()->GetSmarty();
 		$db = cmsms()->GetDb();
@@ -400,6 +401,7 @@ EOT;
 		if(!$modstatus) $this->RegisterModule();		
 	
 		return $response;
+		*/
 	}	
 
 	function Install()
