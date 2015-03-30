@@ -26,6 +26,10 @@
 			<p class="pagetext">*{$mod->ModLang('fielddef_name')}:</p>
 			<p class="pageinput">{$inputname}</p>
 		</div>
+		<div class="pageoverflow">
+			<p class="pagetext">{$mod->ModLang('alias')}:</p>
+			<p class="pageinput">{$input_alias}</p>
+		</div>
 		
 		<div class="pageoverflow">
 			<p class="pagetext">{$mod->ModLang('fielddef_help')}:</p>

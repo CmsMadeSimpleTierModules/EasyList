@@ -98,12 +98,12 @@ if (isset($params['submit']) || isset($params['apply']) || isset($params['save_c
 	
 		$errors[] = $this->ModLang('item_title_empty');
 	}
-/*	
+	
     // check alias
     if (!easylist_utils::is_valid_alias($alias) && !empty($alias)) {
         $errors[] = $this->ModLang('alias_invalid');
     }
-*/	
+	
 	// Check for duplicate
     if ($item_id > 0) {
 	

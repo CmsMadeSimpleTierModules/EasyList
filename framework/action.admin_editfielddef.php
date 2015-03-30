@@ -258,7 +258,7 @@ else {
 }
 
 $smarty->assign('inputname', $this->CreateInputText($id, 'name', $name, 20, 255));
-//$smarty->assign('input_alias', $this->CreateInputText($id, 'alias', $alias, 20, 255, 'disabled'));
+$smarty->assign('input_alias', $this->CreateInputText($id, 'alias', $alias, 20, 255));
 $smarty->assign('inputhelp', $this->CreateInputText($id, 'help', $help, 100, 255));
 $smarty->assign('input_required', $this->CreateInputcheckbox($id, 'required', 1, $required));
 $smarty->assign('backlink', $this->CreateBackLink('fielddeftab'));
