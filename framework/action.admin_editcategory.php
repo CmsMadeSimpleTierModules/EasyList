@@ -12,7 +12,7 @@
 #
 #-------------------------------------------------------------------------
 #
-# Some wackos started destroying stuff since 2012: 
+# Some wackos started destroying  stuff since 2012: 
 #
 # Tapio Löytty, <tapsa@orange-media.fi>
 # Web: www.orange-media.fi
