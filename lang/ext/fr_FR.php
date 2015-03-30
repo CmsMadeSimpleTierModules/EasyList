@@ -77,6 +77,7 @@ $lang['fielddef_TextArea'] = 'Text Area';
 $lang['fielddef_SelectDate'] = 'Select Date';
 $lang['fielddef_SelectDateTime'] = 'Select DateTime';
 $lang['fielddef_Dropdown'] = 'Dropdown';
+$lang['fielddef_DropdownUDT'] = 'Dropdown from UDT';
 $lang['fielddef_ContentPages'] = 'Content Pages';
 $lang['fielddef_SelectFile'] = 'Select File';
 $lang['fielddef_RadioGroup'] = 'Radio Group';
@@ -89,6 +90,7 @@ $lang['fielddef_allow_help'] = 'Specify a comma seprated list of file extensions
 $lang['fielddef_dir_help'] = 'Directory path that will be appended to $config[&#039;uploads_url&#039;] . No slash at the end. {$item_id} and {$item_alias} will be replaced.';
 $lang['fielddef_exclude_prefix_help'] = 'Specify comma separated list of prefixes to exclude files that starts with the set prefix. For example: thumb_, foo_';
 $lang['fielddef_multioptions_help'] = 'Options separated by line breaks. Values can be separated from text with a = character. For example: Banana=banana';
+$lang['fielddef_optionsUDT_help'] = 'Choix de la balise utilisateur(UDT).La balise doit retourner une variable de type tableau';
 $lang['fielddef_separator_help'] = 'Can be empty, single character or HTML entity.';
 $lang['fielddef_size_help'] = 'Specify size of input field. For example: 20';
 $lang['fielddef_max_lenght_help'] = 'Specify maximum lenght of the field. For example: 255';

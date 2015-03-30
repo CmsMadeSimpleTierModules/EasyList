@@ -138,6 +138,8 @@ $lang['fielddef_SelectDate'] = 'Select Date';
 $lang['fielddef_SelectDateTime'] = 'Select DateTime';
 //Dropdown
 $lang['fielddef_Dropdown'] = 'Dropdown';
+//Dropdown UDT
+$lang['fielddef_DropdownUDT'] = 'Dropdown from UDT';
 // Content Pages
 $lang['fielddef_ContentPages'] = 'Content Pages';
 // Select File
@@ -163,6 +165,7 @@ $lang['fielddef_allow_help'] = 'Specify a comma seprated list of file extensions
 $lang['fielddef_dir_help'] = 'Directory path that will be appended to $config[\'uploads_url\'] . No slash at the end. {$item_id} and {$field_id} will be replaced.';
 $lang['fielddef_exclude_prefix_help'] = 'Specify a comma separated list of prefixes to exclude files that start with those prefixes. For example: thumb_, foo_';
 $lang['fielddef_multioptions_help'] = 'Options separated by line breaks. Values can be separated from text with a = character. For example: Banana=banana';
+$lang['fielddef_optionsUDT_help'] = 'Choose UDT.The UDT must return an array';
 $lang['fielddef_separator_help'] = 'Can be empty, single character or HTML entity.';
 $lang['fielddef_size_help'] = 'Specify size of input field. For example: 20';
 $lang['fielddef_max_length_help'] = 'Specify maximum length of the field. For example: 255';
