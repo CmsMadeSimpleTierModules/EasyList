@@ -181,6 +181,7 @@ class 024fc70d51074c9f42ee7f917c37b4ed extends EasyList
 		// Pagination
 		$this->RegisterRoute('/'.$this->prefix.'\/page\/(?P<pagenumber>[0-9]+?)\/(?P<pagelimit>[0-9]+)\/(?P<returnid>[0-9]+)$/', array('action' => 'default'));
 		$this->RegisterRoute('/'.$this->prefix.'\/page\/(?P<pagenumber>[0-9]+?)\/(?P<returnid>[0-9]+)$/', array('action' => 'default'));
+		$this->RegisterRoute('/'.$this->prefix.'\/(?P<category>.+?)\/page\/(?P<pagenumber>[0-9]+?)\/(?P<pagelimit>[0-9]+)\/(?P<returnid>[0-9]+)$/', array('action' => 'default'));
 		
 		// Hierarchy view		
 		$this->RegisterRoute('/'.$this->prefix.'\/(?P<category>.+?)\/(?P<id_hierarchy>[0-9.]+)\/(?P<item>.+?)\/(?P<returnid>[0-9]+)$/', array('action' => 'detail'));
