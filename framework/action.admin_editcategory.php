@@ -190,7 +190,7 @@ $smarty->assign('input_alias', $this->CreateInputText($id, 'alias', $alias, 20, 
 $smarty->assign('input_category_description', $this->CreateTextArea(true, $id, $description, 'description', '', '', '', '', '80', '3'));
 $smarty->assign('input_active', $this->CreateInputcheckbox($id, 'active', 1, $active));
 
-$smarty->assign('input_parent', $this->CreateInputDropdown($id, 'parent_id', EasylistCategoryOperations::GetHierarchyList($this, true, $category_id), -1, $parent_id));
+$smarty->assign('input_parent', $this->CreateInputDropdown($id, 'parent_id', EasyListCategoryOperations::GetHierarchyList($this, true, $category_id), -1, $parent_id));
 /*
 $smarty->assign('submit', $this->CreateInputSubmit($id, 'submit', lang('submit')));
 $smarty->assign('apply', $this->CreateInputSubmit($id, 'apply', lang('apply')));

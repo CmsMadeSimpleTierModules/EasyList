@@ -62,7 +62,7 @@ class EasyListfd_Categories extends EasyListFielddefBase
 		$mod = $this->GetModuleInstance(true);
 		$id_list = $this->GetValue(parent::TYPE_ARRAY);
 		
-		$output = EasylistCategoryOperations::GetCategoryNameFromId($mod, $id_list);
+		$output = EasyListCategoryOperations::GetCategoryNameFromId($mod, $id_list);
 		
 		return implode(', ', $output);
 	}	
@@ -71,7 +71,7 @@ class EasyListfd_Categories extends EasyListFielddefBase
 	{			
 		$mod = $this->GetModuleInstance(true);
 		$type = $this->GetOptionValue('subtype', 'Dropdown');
-		$categories = EasylistCategoryOperations::GetHierarchyList($mod);
+		$categories = EasyListCategoryOperations::GetHierarchyList($mod);
 
 		if($type == 'MultiSelect' || $type == 'CheckboxGroup' || $this->IsRequired())
 			array_shift($categories);

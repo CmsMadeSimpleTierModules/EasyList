@@ -114,7 +114,7 @@ else if( isset($params['submit']) )
       {
 	$dbr = $db->Execute($query,array($rec['parent_id'],$rec['order'],'',$rec['id']));
       }
-    EasylistCategoryOperations::UpdateHierarchyPositions($this);
+    EasyListCategoryOperations::UpdateHierarchyPositions($this);
     
     $this->Redirect($id, 'defaultadmin', $returnid, array('active_tab' => 'categorytab', 'message' => 'changessaved'));
   }

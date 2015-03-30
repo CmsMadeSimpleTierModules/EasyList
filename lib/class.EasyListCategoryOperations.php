@@ -32,7 +32,7 @@
 #
 #-------------------------------------------------------------------------
 
-class EasylistCategoryOperations
+class EasyListCategoryOperations
 {
 	#---------------------
 	# Variables

@@ -50,7 +50,7 @@ $items = array();
 while ($result && $row = $result->FetchRow()) {
 
 	$obj = $this->InitiateCategory();
-	EasylistCategoryOperations::Load($this, $obj, $row);
+	EasyListCategoryOperations::Load($this, $obj, $row);
 	
 	//$obj->depth = count(explode('.', $obj->hierarchy)) - 1;
  
