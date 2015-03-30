@@ -30,6 +30,15 @@ class EasyListfd_DropdownUDT extends EasyListFielddefBase
 		  $utops = cmsms()->GetUserTagOperations();
           return $utops->CallUserTag($udt,$parms);
 	}
+/*	public function Validate(&$errors)
+	{
+			$errors[] = "la valeur du champ est ".$this->Getvalue($this->GetName());
+		if ($this->GetValue("udt")=='none' && $this->IsRequired()) {
+		
+			$errors[] = $this->ModLang('required_field_empty') . ' (' . $this->GetName() . ')';
+		}		
 	
+	}
+*/	
 }
 ?>
