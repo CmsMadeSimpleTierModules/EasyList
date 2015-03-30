@@ -14,7 +14,7 @@
 #
 # Some wackos started destroying stuff since 2012: 
 #
-# Tapio L�ytty,  <tapsa@orange-media.fi>
+# Tapio L�ytty, <tapsa@orange-media.fi>
 # Web: www.orange-media.fi
 #
 # Goran Ilic, <uniqu3e@gmail.com>
