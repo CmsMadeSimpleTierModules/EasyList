@@ -23,7 +23,7 @@
 #-------------------------------------------------------------------------
 # ListIt2 become EasyList due to the departure of the wackos in summer 2014.
 #
-# Jean-Christophe ghio <jcg@interphacepro.com>
+# Jean-Christophe ghio  <jcg@interphacepro.com>
 #
 #-------------------------------------------------------------------------
 # EasyList is a CMS Made Simple module that enables the web developer to create
