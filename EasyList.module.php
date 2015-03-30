@@ -664,7 +664,7 @@ EOT;
 	
 	public function SaveCategory(EasyListCategory &$obj)
 	{
-		EasylistCategoryOperations::Save($this, $obj);
+		EasyListCategoryOperations::Save($this, $obj);
 	}
 	
 	public function InitiateCategory()
@@ -674,13 +674,13 @@ EOT;
 	
 	public function LoadCategoryByIdentifier($identifier, $value)
 	{	
-		if(!in_array($identifier, EasylistCategoryOperations::$identifiers))
+		if(!in_array($identifier, EasyListCategoryOperations::$identifiers))
 			throw new EasyListException("Illegal identifier: $identifier!");
 
 		$obj = $this->InitiateCategory();
 		$obj->$identifier = $value;
 		
-		EasylistCategoryOperations::Load($this, $obj);
+		EasyListCategoryOperations::Load($this, $obj);
 			
 		return $obj;
 	}	
@@ -688,7 +688,7 @@ EOT;
 	public function DeleteCategoryById($id)
 	{
 		$obj = $this->LoadCategoryByIdentifier('category_id', $id);
-		EasylistCategoryOperations::Delete($this, $obj);
+		EasyListCategoryOperations::Delete($this, $obj);
 	}		
 	
 	// Make bulk action (using this: action.ajax.php)
@@ -699,7 +699,7 @@ EOT;
 		foreach($category_order as $key => $item){
 			$db->Execute($query, array($key, $item));
 		}
-		EasylistCategoryOperations::UpdateHierarchyPositions($this);
+		EasyListCategoryOperations::UpdateHierarchyPositions($this);
 		return $this->ModLang('changessaved');
 	}
 	
