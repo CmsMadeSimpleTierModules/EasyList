@@ -14,5 +14,6 @@ EasyList allows you to create lists that you can display throughout your website
  * upload file
  * select file
  * dropdown
+ * NEW => dropdown from UDT
 
 Additional instructions can be set for each type, for example, input field size, max length, WYSIWYG editor, possible drop down values, possible file extensions, directory paths for file selections, date formats.
