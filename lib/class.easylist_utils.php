@@ -99,27 +99,6 @@ class easylist_utils {
 	
 		return $alias;
 	}	
-	
-	/**
-	 * Is valid alias
-	 * @param string $alias
-	 * @return bool Returns true if string in question is a valid alias, or
-	 * false otherwise
-	 */
-	static final public function is_valid_alias($alias)
-	{
-		if (!is_string($alias))
-			return;
-	
-		// check alias
-		// http://www.php.net/manual/en/language.variables.basics.php
-		if (preg_match('/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$/', $alias)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	/**
 	 * Has Prefix
 	 * @param string $string The string in question

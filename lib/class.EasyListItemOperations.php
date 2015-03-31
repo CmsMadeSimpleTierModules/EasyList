@@ -74,12 +74,17 @@ class EasyListItemOperations
 		$sql_start_time = $obj->start_time ? date('Y-m-d H:i:s', strtotime($obj->start_time)) : NULL;
 		$sql_end_time = $obj->end_time ? date('Y-m-d H:i:s', strtotime($obj->end_time)) : NULL;		
 		
-		// Ensure that we have alias
+		// Ensure that we have alias jcg
 		if ($obj->alias == ''){
-		
-			$obj->alias = munge_string_to_url($obj->title, true);
+			$obj->alias = $mod->CleanAlias(munge_string_to_url($obj->title, true));
 		}
-		
+			// check alias is unique
+			$query = 'SELECT COUNT(alias) as alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias LIKE "'.$obj->alias.'%"';
+			$dbresult = $db->GetOne($query);
+			
+			if($dbresult > 0)
+				$obj->alias .= '_'.($dbresult+1);	
+					
 		// Try grabbing owner if not set
 		if (is_null($obj->owner)) {
 		
@@ -122,13 +127,6 @@ class EasyListItemOperations
 
 			if ($position == null)
 				$position = 1;
-			
-			// check alias is unique
-			$query = 'SELECT COUNT(alias) as alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias LIKE "'.$obj->alias.'%"';
-			$dbresult = $db->GetOne($query);
-			
-			if($dbresult > 0)
-				$obj->alias .= '_'.($dbresult+1);	
 			
 			// insert item
 			$query  = 'INSERT INTO ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item 

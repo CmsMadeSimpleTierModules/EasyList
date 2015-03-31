@@ -114,8 +114,8 @@ if (isset($params['submit']) || isset($params['apply']) || isset($params['save_c
         $exists = $db->GetOne($query, array($alias));
     //}	
     // check alias
-    if (!easylist_utils::is_valid_alias($alias) && !empty($alias)) {
-        $errors[] = $this->ModLang('alias_invalid');
+      if (!empty($alias)) {
+			$alias = $this->CleanAlias(munge_string_to_url($alias, true));
     }
 
 

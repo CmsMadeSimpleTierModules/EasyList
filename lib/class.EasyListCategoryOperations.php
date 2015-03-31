@@ -69,12 +69,16 @@ class EasyListCategoryOperations
 		}
 		
 		// Ensure that we have alias
-		if ($obj->alias == ''){
-		
-			$obj->alias = munge_string_to_url($obj->name, true);
+		if ($obj->alias == ''){		
+			$obj->alias = $mod->CleanAlias(munge_string_to_url($obj->name, true));
 		}
-	
 		$db = cmsms()->GetDb();
+		// check alias is unique
+			$query = 'SELECT COUNT(category_alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias LIKE "'.$obj->alias.'%"';
+			$dbresult = $db->GetOne($query);
+			//die($query);
+			if($dbresult > 0)
+				$obj->alias .= '_'.($dbresult+1);		
 	
 		// Get new position
 		$query = 'SELECT max(position) + 1 FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE parent_id = ?';
@@ -125,12 +129,6 @@ class EasyListCategoryOperations
 		// New
 		} else {
 			
-			// check alias is unique
-			$query = 'SELECT COUNT(alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias LIKE "'.$obj->alias.'%"';
-			$dbresult = $db->GetOne($query);
-			
-			if($dbresult > 0)
-				$obj->alias .= '_'.($dbresult+1);		
 		
 			$query = 'INSERT INTO ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category 
 					(category_name, category_description, category_alias, position, parent_id, active, create_date, modified_date, key1, key2, key3) 

@@ -419,8 +419,7 @@ class EasyListFielddefOperations
 	
 		// generate alias if not supplied
 		if ($obj->GetAlias() == '') {
-			//$obj->SetAlias(easylist_utils::generate_alias($obj->GetName()));
-			$generated_alias = munge_string_to_url($obj->GetName(), true);
+			$generated_alias = $mod->CleanAlias(munge_string_to_url($obj->GetName(), true));
 			// check alias is unique
 			$query = 'SELECT COUNT(alias) as alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_fielddef WHERE alias LIKE "'.$generated_alias.'%"';
 			$dbresult = $db->GetOne($query);			
