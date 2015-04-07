@@ -64,7 +64,11 @@ else {
 
 }
 // Detail page check
+if($this->GetPreference('detailpage', $returnid) > 0)
 $detailpage = $this->GetPreference('detailpage', $returnid);
+else
+$detailpage = $returnid;
+
 if(isset($params['detailpage'])) {
 
 	if(is_numeric($params['detailpage'])) {

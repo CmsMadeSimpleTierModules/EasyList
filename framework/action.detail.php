@@ -55,7 +55,10 @@ if(isset($params['item'])) {
 }	
 
 // Summary page check
+if($this->GetPreference('summarypage', $returnid) > 0)
 $summarypage = $this->GetPreference('summarypage', $returnid);
+else
+$summarypage = $returnid;
 if(isset($params['summarypage'])) {
 
 	if(is_numeric($params['summarypage'])) {
