@@ -74,12 +74,21 @@ class EasyListCategoryOperations
 		}
 		$db = cmsms()->GetDb();
 		// check alias is unique
-			$query = 'SELECT COUNT(category_alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias LIKE "'.$obj->alias.'%"';
+		if($obj->category_id > 0) {
+			$query = 'SELECT COUNT(category_alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias = "'.$obj->alias.'" AND category_id != ?';
+			$dbresult = $db->GetOne($query,array($obj->category_id));
+			}
+			else
+			{
+			$query = 'SELECT COUNT(category_alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias = "'.$obj->alias.'"';
 			$dbresult = $db->GetOne($query);
-			//die($query);
-			if($dbresult > 0)
-				$obj->alias .= '_'.($dbresult+1);		
-	
+			}
+			//die($dbresult);
+			if($dbresult > 0) {
+			$query = 'SELECT COUNT(category_alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE category_alias LIKE "'.$obj->alias.'%"';
+			$dbresultd = $db->GetOne($query);
+				$obj->alias .= '_'.($dbresultd+1);		
+			}
 		// Get new position
 		$query = 'SELECT max(position) + 1 FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_category WHERE parent_id = ?';
 		$position = $db->GetOne($query, array($obj->parent_id));

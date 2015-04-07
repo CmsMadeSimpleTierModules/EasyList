@@ -104,25 +104,6 @@ if (isset($params['submit']) || isset($params['apply']) || isset($params['save_c
         $errors[] = $this->ModLang('fielddef_name_empty');
     }
 
-    /*
-	if (isset($fielddef_id)) {
-        $query = 'SELECT fielddef_id FROM ' . cms_db_prefix() . 'module_' . $this->_GetModuleAlias() . '_fielddef WHERE alias = ? AND fielddef_id != ?';
-        $exists = $db->GetOne($query, array($alias, $fielddef_id));
-    } else {
-	*/
-        $query = 'SELECT fielddef_id FROM ' . cms_db_prefix() . 'module_' . $this->_GetModuleAlias() . '_fielddef WHERE alias = ?';
-        $exists = $db->GetOne($query, array($alias));
-    //}	
-    // check alias
-      if (!empty($alias)) {
-			$alias = $this->CleanAlias(munge_string_to_url($alias, true));
-    }
-
-
-    if ($exists) {
-        $errors[] = $this->ModLang('fielddef_alias_exists');
-    }
-	
 	// Do error check that requires object
     if (empty($errors)) {	
 	

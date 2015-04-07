@@ -79,11 +79,22 @@ class EasyListItemOperations
 			$obj->alias = $mod->CleanAlias(munge_string_to_url($obj->title, true));
 		}
 			// check alias is unique
-			$query = 'SELECT COUNT(alias) as alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias LIKE "'.$obj->alias.'%"';
+		if($obj->item_id > 0) {
+			$query = 'SELECT COUNT(alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias = "'.$obj->alias.'" AND item_id != ?';
+			$dbresult = $db->GetOne($query,array($obj->item_id));
+			}
+			else
+			{
+			$query = 'SELECT COUNT(alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias = "'.$obj->alias.'"';
 			$dbresult = $db->GetOne($query);
-			
-			if($dbresult > 0)
-				$obj->alias .= '_'.($dbresult+1);	
+			}
+			//die($dbresult);
+			if($dbresult > 0) {
+			$query = 'SELECT COUNT(alias) AS alias FROM ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_item WHERE alias LIKE "'.$obj->alias.'%"';
+			$dbresultd = $db->GetOne($query);
+				$obj->alias .= '_'.($dbresultd+1);		
+			}
+		
 					
 		// Try grabbing owner if not set
 		if (is_null($obj->owner)) {
@@ -163,7 +174,7 @@ class EasyListItemOperations
 		if(count($obj->fielddefs)) {
 		
 			foreach ($obj->fielddefs as $field) {
-			
+
 				$field->SetItemId($obj->item_id); // <- Remove in 1.5
 				$field->EventHandler()->OnItemSave($mod);	
 

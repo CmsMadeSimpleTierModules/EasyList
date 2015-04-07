@@ -33,9 +33,9 @@
 #-------------------------------------------------------------------------
 #
 # Current available events in system:
-#	- OnItemLoad(ListIt2 &$mod)
-#	- OnItemSave(ListIt2 &$mod)
-#	- OnItemDelete(ListIt2 &$mod)
+#	- OnItemLoad(EasyList &$mod)
+#	- OnItemSave(EasyList &$mod)
+#	- OnItemDelete(EasyList &$mod)
 #	- ItemSavePreProcess(Array &$errors, Array &$params) 
 #	- ItemSavePostProcess(Array &$errors, Array &$params)
 #
@@ -87,9 +87,8 @@ class EasyListEventHandlerBase
 	
 		$query  = 'INSERT INTO ' . cms_db_prefix() . 'module_' . $mod->_GetModuleAlias() . '_fieldval (item_id, fielddef_id, value_index, value) VALUES (?,?,?,?)';
 		$index = 0;
-		
+
 		foreach($this->GetValue() as $one_val) {
-		
 			if(!$one_val)
 				continue;
 		

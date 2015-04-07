@@ -89,7 +89,7 @@ abstract class EasyListFielddefBase implements ArrayAccess
 		$this->disabled = $db_info->disabled;
 		$this->path = $db_info->path;		
 		$this->friendlytype = $db_info->type;
-		$this->value = new ListIt2FielddefValue;
+		$this->value = new EasylistFielddefValue;
 		$this->position = -1;
 		$this->required = 0;
 		$this->options = array();
@@ -240,7 +240,7 @@ abstract class EasyListFielddefBase implements ArrayAccess
 
 	public final function SetValue($value = array()) {
 				
-		$this->value = new ListIt2FielddefValue($value);
+		$this->value = new EasylistFielddefValue($value);
 	}
 	
 	public final function GetOriginator() {
@@ -487,7 +487,7 @@ abstract class EasyListFielddefBase implements ArrayAccess
  * @author Tapio Löytty
  * @since 1.3.1
  */
-class ListIt2FielddefValue extends ArrayObject
+class EasylistFielddefValue extends ArrayObject
 { 
 	#---------------------
 	# Magic methods

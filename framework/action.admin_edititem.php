@@ -73,15 +73,12 @@ if($mode == 'copy')
 	$obj = EasyListItemOperations::Copy($obj);
 
 #---------------------
-# Handle custom fields
+# Handle custom fields modif jcg (int)
 #---------------------
-
 if (isset($params['customfield'])) {
-
 	foreach ((array)$params['customfield'] as $fldid => $value) {
-	
-		if(isset($obj->fielddefs[$fldid]))
-			$obj->fielddefs[$fldid]->SetValue($value);
+		if(isset($obj->fielddefs[(int) $fldid]))
+			$obj->fielddefs[(int) $fldid]->SetValue($value);
 	}
 }
 
@@ -107,14 +104,14 @@ if (isset($params['submit']) || isset($params['apply']) || isset($params['save_c
 	// Check for duplicate
     if ($item_id > 0) {
 	
-        $query = 'SELECT item_id FROM ' . cms_db_prefix() . 'module_' . $this->_GetModuleAlias() . '_item WHERE alias = ? AND item_id != ?';
-        $exists = $db->GetOne($query, array($alias, $item_id));
+        $query = 'SELECT item_id FROM ' . cms_db_prefix() . 'module_' . $this->_GetModuleAlias() . '_item WHERE alias = "'.$alias.'" AND item_id != '.$item_id;
+        $exists = $db->GetOne($query);
     } else {	
 	
         $query = 'SELECT item_id FROM ' . cms_db_prefix() . 'module_' . $this->_GetModuleAlias() . '_item WHERE alias = ?';
         $exists = $db->GetOne($query, array($alias));
     }	
-
+//$errors[] =$exists;
     if ($exists) {
         $errors[] = $this->ModLang('item_alias_exists');
     }	
