@@ -757,7 +757,7 @@ EOT;
 	public function CreateBackLink($tab)
 	{
 		$secureparam = CMS_SECURE_PARAM_NAME . '=' . $_SESSION[CMS_USER_KEY];
-		return '<a class="pageback" href="moduleinterface.php?' . $secureparam .'&module='.$this->GetName().'&amp;m1_active_tab='.$tab.'">'.$this->ModLang('back').'</a>';
+		return '<a class="pageback" href="moduleinterface.php?' . $secureparam .'&mact='.$this->GetName().',m1_,defaultadmin,0&amp;m1_active_tab='.$tab.'">'.$this->ModLang('back').'</a>';
 	}
 
 	function CreatePrettyLink($id, $action, $returnid='', $contents='', $params=array(), $warn_message='', $onlyhref=false, $inline=false, $addtext='', $targetcontentonly=false, $prettyurl='')
