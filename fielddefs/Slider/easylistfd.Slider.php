@@ -43,7 +43,7 @@ class EasyListfd_Slider extends EasyListFielddefBase
 	public function GetHeaderHTML()
 	{
         $tmpl = <<<EOT
-<link type="text/css" rel="stylesheet" href="{$this->GetURLPath()}/EasyListfd-slider.css" />
+<link type="text/css" rel="stylesheet" href="{$this->GetURLPath()}/easylistfd-slider.css" />
 EOT;
 		return $tmpl;
 	}	

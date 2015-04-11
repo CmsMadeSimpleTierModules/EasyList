@@ -45,8 +45,8 @@ class EasyListfd_ColorPicker extends EasyListFielddefBase
 	public function GetHeaderHTML()
 	{
         $tmpl = <<<EOT
-<link type="text/css" rel="stylesheet" href="{$this->GetURLPath()}/EasyListfd-colorpicker.css" />
-<script type="text/javascript" src="{$this->GetURLPath()}/EasyListfd-colorpicker.js"></script>
+<link type="text/css" rel="stylesheet" href="{$this->GetURLPath()}/easylistfd-colorpicker.css" />
+<script type="text/javascript" src="{$this->GetURLPath()}/easylistfd-colorpicker.js"></script>
 EOT;
 		return $tmpl;
 	}
