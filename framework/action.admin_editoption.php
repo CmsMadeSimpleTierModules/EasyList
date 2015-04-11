@@ -67,11 +67,14 @@ if($params['adminsection'] == 'files' && $this->GetPreference('adminsection') !=
 	$path = "custom/lang/";
 	$file = $path."fr_FR.php";
 		if(file_exists($file)) {
-		$old = file($file);
-		array_pop($old);
-		$data = '$lang["files"] = "EZList";'.chr(10).'?>';
-		array_push($old, $data);
-		file_put_contents($file, $old);
+			$old = file($file);
+			$line ='$lang["files"] = "EZList";'.chr(10);
+				if(!in_array($line, $old)) {
+					array_pop($old);
+					$data = $line.'?>';
+					array_push($old, $data);
+					file_put_contents($file, $old);
+				}
 		}
 		else {
 			@mkdir($path, 0777, true);
