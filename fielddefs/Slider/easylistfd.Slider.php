@@ -31,7 +31,6 @@
 # names for easier client maintenance.
 #
 #-------------------------------------------------------------------------
-
 class EasyListfd_Slider extends EasyListFielddefBase
 {
 	public function __construct(&$db_info) 

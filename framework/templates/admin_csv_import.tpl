@@ -24,9 +24,11 @@
 			</thead>
 			<tbody class="content" width="100%">
 		{foreach from=$database_values item=obj}
+		{$selected = $obj->alias}
+		{if $obj->alias == 'item_id'}{$selected = ''}{/if}		
 				<tr class="{cycle values='row1,row2'}">
 					<td>{$obj->alias}</td>
-					<td>{html_options name="`$actionid`import_values[`$obj->alias`]" options=$file_values}</td>
+					<td>{html_options name="`$actionid`import_values[`$obj->alias`]" options=$file_values selected=$selected}</td>
 					<td>{$obj->help}</td>
 					<td>{$obj->required_image}</td>
 				</tr>

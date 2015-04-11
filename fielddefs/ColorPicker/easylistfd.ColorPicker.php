@@ -33,7 +33,6 @@
 # Or read it online: http://www.gnu.org/licenses/licenses.html#GPL
 #
 #-------------------------------------------------------------------------
-
 class EasyListfd_ColorPicker extends EasyListFielddefBase
 {
 	public function __construct(&$db_info) 
