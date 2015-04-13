@@ -335,6 +335,7 @@ EOT;
 		$files[] = cms_join_path($config['root_path'],'module_custom',$this->GetName(),'templates',$tpl_name);
 		$files[] = cms_join_path($this->GetModulePath(),'templates',$tpl_name);
 		$files[] = cms_join_path(EASYLIST_TEMPLATE_PATH,$tpl_name);
+		$smarty->no_absolute_templates = FALSE;
 
 		foreach($files as $file) {
 		
