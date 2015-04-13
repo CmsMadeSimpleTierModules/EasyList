@@ -62,10 +62,14 @@ if(count($errors)) {
 	$this->Redirect($id, 'defaultadmin', '', $params);
 }
 
+#----------------------------------------
+# Customize Files section name if selected
+#----------------------------------------
 if($params['adminsection'] == 'files' && $this->GetPreference('adminsection') != 'files') { 
-	$lang = CmsNlsOperations::get_installed_languages();
+	//$lang = CmsNlsOperations::get_installed_languages();
+	$lang = CmsNlsOperations::get_current_language();
 	$path = "custom/lang/";
-	$file = $path."fr_FR.php";
+	$file = $path.$lang.".php";
 		if(file_exists($file)) {
 			$old = file($file);
 			$line ='$lang["files"] = "EZList";'.chr(10);
