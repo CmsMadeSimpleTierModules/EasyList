@@ -226,6 +226,18 @@ function ajax_function(usr_function, params) {
 $(function($) {
 
     /**
+     * Custom section name
+     */
+    $('#m1_adminsection').change(function(event) {
+	if($(this).val() == 'files') {
+                $(admsection).append('<label>Friendly admin section name : </label><input type="text" maxlength="20" size="20" id="m1_sectionname" name="m1_sectionname" class="cms_textfield">');
+	}
+	else {
+	$(m1_sectionname).remove();
+	}
+	})
+
+    /**
      * TYPE SELECT
      */
     $('#m1_type').change(function(event) {

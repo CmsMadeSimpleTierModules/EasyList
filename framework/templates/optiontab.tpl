@@ -11,7 +11,7 @@
     </div>      
     <div class="pageoverflow">
         <p class="pagetext">{$mod->ModLang('prompt_adminsection')}:</p>
-        <p class="pageinput">{$input_adminsection}</p>
+        <p class="pageinput" id="admsection">{$input_adminsection}</p>
     </div>     
 </fieldset> 
 <fieldset>
