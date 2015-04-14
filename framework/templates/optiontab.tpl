@@ -12,6 +12,11 @@
     <div class="pageoverflow">
         <p class="pagetext">{$mod->ModLang('prompt_adminsection')}:</p>
         <p class="pageinput" id="admsection">{$input_adminsection}</p>
+		{if $input_sectionname}
+		<div id="sectionname"><label>{$mod->ModLang('prompt_sectionname')} : </label>
+		{$input_sectionname}
+		</div>
+		{/if}
     </div>     
 </fieldset> 
 <fieldset>

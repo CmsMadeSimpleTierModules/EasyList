@@ -141,6 +141,7 @@ $lang['xmodule_options'] = 'Cross Module Options';
 $lang['prompt_friendlyname'] = 'Nom courant du module';
 $lang['prompt_moddescription'] = 'Module Admin description';
 $lang['prompt_adminsection'] = 'Module Admin Section';
+$lang['prompt_sectionname'] = 'Changer le nom de la section';
 $lang['items_options'] = 'Items Options';
 $lang['prompt_item_singular'] = 'Article au singulier';
 $lang['prompt_item_plural'] = 'Article au pluriel';

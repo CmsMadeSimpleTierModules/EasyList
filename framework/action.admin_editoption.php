@@ -65,32 +65,37 @@ if(count($errors)) {
 #----------------------------------------
 # Customize Files section name if selected
 #----------------------------------------
-if($params['adminsection'] == 'files' && $this->GetPreference('adminsection') != 'files') { 
-	//$lang = CmsNlsOperations::get_installed_languages();
+if(!empty($params['sectionname']) && lang('files') != $params['sectionname']) { 
 	$lang = CmsNlsOperations::get_current_language();
 	$path = "custom/lang/";
 	$file = $path.$lang.".php";
-		if(file_exists($file)) {
-			$old = file($file);
-			$line ='$lang["files"] = "EZList";'.chr(10);
-				if(!in_array($line, $old)) {
-					array_pop($old);
-					$data = $line.'?>';
-					array_push($old, $data);
-					file_put_contents($file, $old);
-				}
-		}
-		else {
-			@mkdir($path, 0777, true);
-			$data = '<?php'.chr(10).'$lang["files"] = "EZList";'.chr(10).'?>';
-			file_put_contents($file, $data);
-		}
+	$label = $params['sectionname'];
+			if(file_exists($file)) {
+			    $new = array();
+				$old = file($file);
+				$variab = '$lang["files"] ';
+				$newline =$variab.'= "'.$label.'";';
+					foreach($old as $line) {
+					$var = explode('=', $line);
+						if($var[0] != $variab) {
+						array_push($new, $line);
+						}
+					}
+						array_pop($new);
+						$data = $newline.chr(10).'?>';
+						array_push($new, $data);
+						file_put_contents($file, $new);
+			}
+			else {
+				@mkdir($path, 0777, true);
+				$data = '<?php'.chr(10).'$lang["files"] = "'.$label.'";'.chr(10).'?>';
+				file_put_contents($file, $data);
+			}
 }
 
 #---------------------
 # Set new values
 #---------------------
-
 $this->SetPreference('friendlyname',		$params['friendlyname']);
 $this->SetPreference('adminsection',		$params['adminsection']);
 $this->SetPreference('moddescription',      $params['moddescription']);

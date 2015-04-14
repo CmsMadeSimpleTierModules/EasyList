@@ -77,7 +77,7 @@ $admin_sections = array(
     lang('siteadmin') => 'siteadmin',
     lang('myprefs') => 'myprefs',
     lang('ecommerce') => 'ecommerce',
-    'EZList' => 'files',
+    lang('files')     => 'files',
 );
 
 // sortorder options
@@ -92,11 +92,15 @@ $display_inline     	= $this->GetPreference('display_inline', 0);
 $subcategory        	= $this->GetPreference('subcategory', 0);
 $display_create_date 	= $this->GetPreference('display_create_date', 0);
 $reindex_search 		= $this->GetPreference('reindex_search', 0);
+$adminsection           = $this->GetPreference('adminsection', 'content');
 
 #---------------------
 # Smarty processing
 #---------------------
-
+if($adminsection == 'files')
+{
+$smarty->assign('input_sectionname', $this->CreateInputText($id, 'sectionname', '', 20));
+}
 $smarty->assign('startform', $this->CreateFormStart($id, 'admin_editoption', $returnid));
 $smarty->assign('endform', $this->CreateFormEnd());
 $smarty->assign('submit', $this->CreateInputSubmit($id, 'submit', lang('submit')));
@@ -104,7 +108,7 @@ $smarty->assign('submit', $this->CreateInputSubmit($id, 'submit', lang('submit')
 // Module Options
 $smarty->assign('input_friendlyname', $this->CreateInputText($id, 'friendlyname', $this->GetPreference('friendlyname', ''), 50));
 $smarty->assign('input_moddescription', $this->CreateTextArea(false, $id, $this->GetPreference('moddescription', $this->ModLang('moddescription')), 'moddescription', 'pagesmalltextarea', '', '', '', '80', '3'));
-$smarty->assign('input_adminsection', $this->CreateInputDropdown($id, 'adminsection', $admin_sections, -1, $this->GetPreference('adminsection', 'content'), 'id="m1_adminsection"'));
+$smarty->assign('input_adminsection', $this->CreateInputDropdown($id, 'adminsection', $admin_sections, -1, $adminsection, 'id="m1_adminsection"'));
 
 // Module defaults
 $smarty->assign('input_detailpage', $content_ops->CreateHierarchyDropdown('', $this->GetPreference('detailpage'), $id.'detailpage'));

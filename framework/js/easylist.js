@@ -230,10 +230,10 @@ $(function($) {
      */
     $('#m1_adminsection').change(function(event) {
 	if($(this).val() == 'files') {
-                $(admsection).append('<label>Friendly admin section name : </label><input type="text" maxlength="20" size="20" id="m1_sectionname" name="m1_sectionname" class="cms_textfield">');
+                $(admsection).append('<div id="sectionname"><label>You can change section name here : </label><input type="text" maxlength="20" size="20" id="m1_sectionname" name="m1_sectionname" class="cms_textfield"></div>');
 	}
 	else {
-	$(m1_sectionname).remove();
+	$(sectionname).remove();
 	}
 	})
 
