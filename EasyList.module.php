@@ -71,6 +71,12 @@ class EasyList extends CMSModule
 		$this->_item_cache 	= new EasyListCache(EasyListItemOperations::$identifiers);
 		$this->_config 		= new EasyListConfig($this);
 		$this->prefix 		= $this->GetPreference('url_prefix', munge_string_to_url($this->GetName(), true));
+    ## By Jo Morg - start
+    # added a new file to lib called class.EasyListTemplateResource.php
+    # where the class EasyListTemplateResource resides
+    cmsms()->GetSmarty()->registerResource('eltemplate', new EasyListTemplateResource() ); 
+    ## By Jo Morg - end
+    
 		parent::__construct();	
 	}
 	
@@ -325,29 +331,11 @@ EOT;
 		if (!$ok) return;
 
 		$smarty = cmsms()->GetSmarty();	
-		$config = cmsms()->GetConfig();
 		$result = '';
-		
 		$oldcache = $smarty->caching;
 		$smarty->caching = $this->can_cache_output() ? Smarty::CACHING_LIFETIME_CURRENT : Smarty::CACHING_OFF;
-
-		$files = array();
-		$files[] = cms_join_path($config['root_path'],'module_custom',$this->GetName(),'templates',$tpl_name);
-		$files[] = cms_join_path($this->GetModulePath(),'templates',$tpl_name);
-		$files[] = cms_join_path(EASYLIST_TEMPLATE_PATH,$tpl_name);
-		$smarty->no_absolute_templates = FALSE;
-
-		foreach($files as $file) {
-		
-			if(is_readable($file)) {
-
-				$result = $smarty->fetch($file);
-				break;
-			}
-		}
-		
+		$result = $smarty->fetch('eltemplate:' . $this->GetName() . ';' . $tpl_name);                            
 		$smarty->caching = $oldcache;
-
 		return $result;		
 	}
 
