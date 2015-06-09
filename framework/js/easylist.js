@@ -259,7 +259,7 @@ $(function($) {
             },
             error : function(jqXHR, textStatus, errorThrown) {
 
-                alert("Sorry. There was an ListIt2 AJAX error: " + textStatus);
+                alert("Sorry. There was an Easylist AJAX error: " + textStatus);
             },
             success : function(data) {
 

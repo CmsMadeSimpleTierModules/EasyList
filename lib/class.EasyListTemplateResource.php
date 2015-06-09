@@ -55,12 +55,14 @@ class EasyListTemplateResource extends Smarty_Resource_Custom
 
     $config = cmsms()->GetConfig();
     $files = array();
+    $files[] = $params[1]; //add by jcg
     $files[] = cms_join_path($config['root_path'],'module_custom',$params[0],'templates',$params[1]);
     $files[] = cms_join_path($config['root_path'],'modules',$params[0],'templates',$params[1]);
     $files[] = cms_join_path(EASYLIST_TEMPLATE_PATH, $params[1]);
     
     foreach( $files as $one ) 
     {
+	//echo $one.'<br>'; //jcg
       if( file_exists($one) ) 
       {
         $source = @file_get_contents($one);

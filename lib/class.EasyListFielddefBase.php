@@ -100,6 +100,7 @@ abstract class EasyListFielddefBase implements ArrayAccess
 		
 			$this->caller = $caller_object->GetName();
 		}
+		    //cmsms()->GetSmarty()->registerResource('eltemplate', new EasyListTemplateResource() );jcg
 	}
 	
 	public function __get($key)
@@ -388,15 +389,16 @@ abstract class EasyListFielddefBase implements ArrayAccess
 	
 	public function RenderForEdit($id, $returnid)
 	{
+		$easylist = 
 		$fn = $this->GetPath() . DIRECTORY_SEPARATOR . 'admin.' . $this->GetType() . '.tpl';
 		if(is_readable($fn)) {
 
 			$smarty = cmsms()->GetSmarty();
-			
 			$smarty->assign('actionid', $id);
 			$smarty->assign('returnid', $returnid);
-		
-			return $smarty->fetch($fn);
+			$mod = $this->GetModuleInstance(true);
+			return $mod->ModProcessTemplate($fn);//jcg
+			//return $smarty->fetch($fn);
 		}
 	}
 	
@@ -404,13 +406,15 @@ abstract class EasyListFielddefBase implements ArrayAccess
 	{		
 		$fn = $this->GetPath() . DIRECTORY_SEPARATOR . 'input.' . $this->GetType() . '.tpl';
 		if(is_readable($fn)) {
-	
+
 			$smarty = cmsms()->GetSmarty();
 			
 			$smarty->assign('actionid', $id);
 			$smarty->assign('returnid', $returnid);		
+			$mod = $this->GetModuleInstance(true);
+			return $mod->ModProcessTemplate($fn);//jcg
 	
-			return $smarty->fetch($fn);
+			//return $smarty->fetch($fn);
 		}
 	}	
 	
