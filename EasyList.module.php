@@ -43,7 +43,7 @@ define('EASYLIST_VALUE_SEPARATOR', ',');
 define('EASYLIST_CONFIG_FILE', 'listit2_config.php');
 define('EASYLIST_FRAMEWORK_PATH', cms_join_path($config['root_path'],'modules',EASYLIST,'framework'));
 define('EASYLIST_TEMPLATE_PATH', cms_join_path(EASYLIST_FRAMEWORK_PATH,'templates'));
-define ('EZVERSION', '1.3-beta1');
+define ('EZVERSION', '1.0');
 /*****************************************************************
  MAIN CLASS
 *****************************************************************/
