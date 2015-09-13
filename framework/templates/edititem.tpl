@@ -40,7 +40,7 @@
 
 		{if count($itemObject)}
 			{foreach from=$itemObject->fielddefs item='fielddef'}
-				{$fielddef->RenderInput($actionid, $returnid)}
+				{$fielddef->RenderInput($actionid, $returnid, $fielddef)}
 			{/foreach}
 		{/if}
 

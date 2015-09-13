@@ -46,13 +46,13 @@ class EasyListfd_Categories extends EasyListFielddefBase
 		return true;
 	}
 	
-	public function RenderInput($id, $returnid)
+	public function RenderInput($id, $returnid, $fielddef)
 	{
 		$type = $this->GetOptionValue('subtype', 'Dropdown');
 		$obj = EasyListFielddefOperations::LoadFielddefByType($type);
 		
 		if(is_object($obj))
-			return $obj->RenderInput($id, $returnid);
+			return $obj->RenderInput($id, $returnid, $fielddef);
 			
 		return false;
 	}

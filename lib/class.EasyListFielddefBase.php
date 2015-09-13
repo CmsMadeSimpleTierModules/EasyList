@@ -402,13 +402,13 @@ abstract class EasyListFielddefBase implements ArrayAccess
 		}
 	}
 	
-	public function RenderInput($id, $returnid)
+	public function RenderInput($id, $returnid, $fielddef)
 	{		
 		$fn = $this->GetPath() . DIRECTORY_SEPARATOR . 'input.' . $this->GetType() . '.tpl';
 		if(is_readable($fn)) {
 
 			$smarty = cmsms()->GetSmarty();
-			
+			$smarty->assign('fielddef', $fielddef);
 			$smarty->assign('actionid', $id);
 			$smarty->assign('returnid', $returnid);		
 			$mod = $this->GetModuleInstance(true);

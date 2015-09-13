@@ -71,11 +71,9 @@ class EasyList extends CMSModule
 		$this->_item_cache 	= new EasyListCache(EasyListItemOperations::$identifiers);
 		$this->_config 		= new EasyListConfig($this);
 		$this->prefix 		= $this->GetPreference('url_prefix', munge_string_to_url($this->GetName(), true));
-    ## By Jo Morg - start
-    # added a new file to lib called class.EasyListTemplateResource.php
+      # added a new file to lib called class.EasyListTemplateResource.php
     # where the class EasyListTemplateResource resides
     cmsms()->GetSmarty()->registerResource('eltemplate', new EasyListTemplateResource() ); 
-    ## By Jo Morg - end
     
 		parent::__construct();	
 	}
@@ -327,14 +325,16 @@ EOT;
 	
 	public function ModProcessTemplate($tpl_name)
 	{
+
 		$ok = (strpos($tpl_name, '..') === false);
 		if (!$ok) return;
-
+        $module =$this->GetName();
 		$smarty = cmsms()->GetSmarty();	
 		$result = '';
 		$oldcache = $smarty->caching;
 		$smarty->caching = $this->can_cache_output() ? Smarty::CACHING_LIFETIME_CURRENT : Smarty::CACHING_OFF;
 		$result = $smarty->fetch('eltemplate:' . $this->GetName() . ';' . $tpl_name);                            
+		//$result = $smarty->fetch('eltemplate:' . $module . ';' . $tpl_name);                            
 		$smarty->caching = $oldcache;
 		return $result;		
 	}
