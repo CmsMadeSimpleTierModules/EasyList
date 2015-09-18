@@ -45,7 +45,6 @@ Events::SendEvent($this->GetName(), 'PreRenderAction', array('action_name' => $n
 #---------------------
 # Check params
 #---------------------
-echo $this->_GetModuleAlias();
 //which template to use
 //$summarytemplate = 'summary_'.$this->GetPreference($this->_GetModuleAlias() . '_default_summary_template');
 if(isset($params['template_summary'])) {
