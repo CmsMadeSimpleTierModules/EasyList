@@ -1,0 +1,14 @@
+﻿<p>Parce que EasyList est un nouveau module (un fork de ListIt2), il n'y a pas de procédure automatique de mise à jour.
+Vous pouvez quand même suivre cette procédure de déplacement des données.</p>
+<p><strong>ATTENTION : </strong>cette procédure s'adresse à des techniciens et est à faire avec précaution dans un environnement de test, après avoir sauvegardé vos base de données !!!!</p>
+<ol>
+<li>Une fois EasyList installé, créez les instances à l'indentique de celles de ListIt2.</li>
+<li>Récupérez les données seulement des tables ListIt2 'category', 'fielddef' et 'fielddef_opts' au format SQL.</li>
+<li>Modifiez dans le fichier SQL les noms des entités en remplaçant 'listit' par 'easylist'.</li>
+<li>Importez ce fichier dans votre base de données où est installé Easylist.</li>
+<li>Vérifiez dans votre site que votre instance Easylist contient bien les catégories et les définitions de champ.</li>
+<li>Sur le site Listit2, depuis votre instance, exportez vos articles (en selectionnant tous les champs).</li>
+<li>Sur le site EasyList, importez le fichier csv généré et vérifiez que vos articles sont revenus.</li>
+<li>Effectuez les réglages dans l'onglet Options.</li>
+<li>Enjoy! et offrez-moi un café</li>
+</ol> 

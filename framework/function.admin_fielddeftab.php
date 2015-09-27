@@ -61,7 +61,7 @@ foreach($fielddefs as $fielddef) {
 $smarty->assign('startform', $this->CreateFormStart($id, 'admin_deletefielddef', $returnid));
 $smarty->assign('endform', $this->CreateFormEnd());
 
-$smarty->assign_by_ref('items', $fielddefs);
+$smarty->assign('items', $fielddefs);
 $smarty->assign('submitorder', $this->CreateInputSubmit($id, 'submit_fielddeforder', $this->ModLang('submit_order')));
 $smarty->assign('addlink', $this->CreateLink($id, 'admin_editfielddef', $returnid, $admintheme->DisplayImage('icons/system/newobject.gif', $this->ModLang('add', $this->ModLang('fielddef')), '', '', 'systemicon') . $this->ModLang('add', $this->ModLang('fielddef'))));
 $smarty->assign('submitmassdelete', $this->CreateInputSubmit($id, 'submitmassdelete', $this->ModLang('delete_selected', $this->ModLang('fielddefs')), '', '', $this->ModLang('areyousure_deletemultiple', $this->ModLang('fielddefs'))));

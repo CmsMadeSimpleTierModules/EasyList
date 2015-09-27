@@ -304,12 +304,12 @@ EOT;
 		global $CMS_ADMIN_PAGE;
 		
 		$config = cmsms()->GetConfig();
-		$smarty = cmsms()->GetSmarty();
+		$smarty = $this->GetActionTemplateObject();
 		$db = cmsms()->GetDb();
 			
 		$this->LoadModuleHints($params);
 		
-		$smarty->assign_by_ref('mod', $this);
+		$smarty->assign('mod', $this);
 		$smarty->assign('actionid', $id);
 		$smarty->assign('returnid', $returnid);
 		
@@ -329,7 +329,7 @@ EOT;
 		if($CMS_ADMIN_PAGE) {
 		
 			$themeObject = cms_utils::get_theme_object();
-			$smarty->assign_by_ref('themeObject', $themeObject);		
+			$smarty->assign('themeObject', $themeObject);		
 		}	
 	
 		if ($name != '') {
