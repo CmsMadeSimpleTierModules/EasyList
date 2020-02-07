@@ -432,15 +432,17 @@ EOT;
 	// CGE hint system support	
 	public function LoadModuleHints(&$params)
 	{
-		$this->use_hints = cms_utils::get_app_data('__MODULE_HINT__'.$this->GetName());		
-		if(count($this->use_hints) > 0) {
-			
+		$this->use_hints = cms_utils::get_app_data('__MODULE_HINT__'.$this->GetName());
+		if(is_array($this->use_hints) > 0) {
+
 			foreach((array)$this->use_hints as $key=>$value) {
-			
-				if(isset($params[$key])) continue;
+
+				if(isset($params[$key])) {
+					break;
+				}
 				$params[$key] = $value;
 			}
-		}	
+		}
 	}
 	
 	#---------------------
@@ -720,8 +722,7 @@ EOT;
 	 */
 	public function _GetModuleConfig()
 	{
-		if(count(func_num_args())) {
-			
+		if(func_num_args() !== null) {
 			$key = func_get_arg(0);
 			return $this->_config[$key];
 		}
